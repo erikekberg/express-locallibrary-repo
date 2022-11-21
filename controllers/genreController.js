@@ -5,16 +5,16 @@ const { body, validationResult } = require("express-validator");
 
 // Display list of all Genre.
 exports.genre_list = (req, res) => {
-  Genre.find().exec(function(err, genre_list, next) {
-    if(err) {
+  Genre.find().exec(function (err, genre_list, next) {
+    if (err) {
       return next(err);
     }
     console.log(genre_list);
     res.render("genre_list", {
       title: "Genre List",
-      genre_list: genre_list
-    })
-  })
+      genre_list: genre_list,
+    });
+  });
 };
 
 // Display detail page for a specific Genre.
